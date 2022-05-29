@@ -11,15 +11,15 @@ The data used in this study were gathered from 188 patients with PD (107 men and
 
 Various speech signal processing algorithms including Time Frequency Features, Mel Frequency Cepstral Coefficients (MFCCs), Wavelet Transform based Features, Vocal Fold Features and TWQT features have been applied to the speech recordings of Parkinson's Disease (PD) patients to extract clinically useful information for PD assessment.
 
-Baseline Features: Column-3 to Column-23
-Intensity Parameters: Col24 to Col26
-Formant Frequencies: Col27 to Col30
-Bandwidth Parameters: Col31 to Col34
-Vocal Fold: Col35 to Col56
-MFCC: Col57 to Col140
-Wavelet Features: Col141 to Col322
-TQWT Features: Col323 to Col754
-Class: Col755
+Baseline Features: Column-3 to Column-23 <br/>
+Intensity Parameters: Col24 to Col26 <br/>
+Formant Frequencies: Col27 to Col30 <br/>
+Bandwidth Parameters: Col31 to Col34 <br/>
+Vocal Fold: Col35 to Col56 <br/>
+MFCC: Col57 to Col140 <br/>
+Wavelet Features: Col141 to Col322 <br/>
+TQWT Features: Col323 to Col754 <br/>
+Class: Col755 <br/>
 
 ## Citation Request:
 
