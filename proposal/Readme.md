@@ -1,1 +1,0 @@
-**This will contain drafts and final proposal/presentation.**
