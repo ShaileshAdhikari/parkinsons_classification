@@ -27,6 +27,13 @@ going to test the impact of the choice of feature extraction and learning algori
 reliability. We will be using Baseline Vocal Features with machine generated features like, frequency change and
 MFCC coefficient.
 
+<div align="center">
+    <figure>
+        <img src="sys-flow.png" alt="System Flow">
+        <figcaption>Figure 1: System Flow for the Project</figcaption>
+    </figure>
+</div>
+
 ---
 
 # Methods
@@ -59,7 +66,7 @@ For Feature Engineering we are going to perform two different analysis side-by-s
 <div align="center">
     <figure>
         <img src="data_flow.png" alt="Feature Engineering Process">
-        <figcaption>Figure 1: Feature Engineering Process Flow</figcaption>
+        <figcaption>Figure 2: Feature Engineering Process Flow</figcaption>
     </figure>
 </div>
 
