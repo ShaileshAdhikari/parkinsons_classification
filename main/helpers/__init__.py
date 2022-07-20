@@ -1,7 +1,12 @@
 from .data_functions import (
     get_train_test,
+    get_class_ratios,
     RANDOM_STATE,
-    normalize
+)
+
+from .evaluation_metrics import (
+    confusion_matrix,
+    classification_report
 )
 
 from .xgboost_model import TrainXGBoost as XGBoostModel
