@@ -1,7 +1,8 @@
 from sklearn.metrics import (
     roc_auc_score,
     confusion_matrix as cm,
-    classification_report as cr
+    classification_report as cr,
+    matthews_corrcoef as mcc,
 )
 import numpy as np
 from typing import AnyStr
@@ -22,7 +23,8 @@ def classification_report(
         Structured string with classification_report
     """
     report = cr(true, pred)
-    report += f'\n         auc                           {roc_auc_score(true, pred).round(2)} \n'
+    report += f'\n         auc                           {roc_auc_score(true, pred).round(2)}'
+    report += f'\n         mcc                           {mcc(true, pred).round(2)} \n'
     return report
 
 
