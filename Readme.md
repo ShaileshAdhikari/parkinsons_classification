@@ -1,7 +1,7 @@
 <h1 align="center">Computer Aided Parkinson's Disease Classification</h1>
 <h4 align="center">For course fulfillment of Fuse Micro-degree L2</h4>
 
-<h3 align="center"> Jyoti Praksh Uprety &emsp;&emsp; Shailesh Adhikari &emsp;&emsp; Susmita Poudel &emsp;&emsp; Shulav Karki </h3>
+<h3 align="center"> Jyoti Praksh Uprety &nbsp;&nbsp;•&nbsp;&nbsp; Shailesh Adhikari &nbsp;&nbsp;•&nbsp;&nbsp; Susmita Poudel &nbsp;&nbsp;•&nbsp;&nbsp; Shulav Karki </h3>
 
 ---
 
@@ -29,7 +29,7 @@ MFCC coefficient.
 
 <div align="center">
     <figure>
-        <img src="sys-flow.png" alt="System Flow">
+        <img src="documentation/sys-flow.png" alt="System Flow">
         <figcaption>Figure 1: System Flow for the Project</figcaption>
     </figure>
 </div>
@@ -59,13 +59,15 @@ most popular speech features used in PD studies. These features are referred as 
 Other than these, acoustic analysis software is
 utilized for extracting **Time Frequency Features** and **Mel Frequency Cepstral Coefficient**.
 
+By the end of Feature extracting process, we had total of **44** independent features and a dependent class.
+
 ## Feature Engineering
 
 For Feature Engineering we are going to perform two different analysis side-by-side.
 
 <div align="center">
     <figure>
-        <img src="data_flow.png" alt="Feature Engineering Process">
+        <img src="documentation/data_flow.png" alt="Feature Engineering Process">
         <figcaption>Figure 2: Feature Engineering Process Flow</figcaption>
     </figure>
 </div>
@@ -75,11 +77,13 @@ without any collinearity. We have started with **Variation** anlysis, followed b
 any linear relationship between the features.Next, we work with **Multicollinearity** analysis to remove any
 collinearity between the features. And, finally we find **Collrelation with Class** analysis to remove any
 linear relationship between the features and the class. Finally, we did model based analysis using **Backward Elimanitation**
-to produce our first dataset.
+to produce our first dataset. By the end of this analysis, we have found the **27 independent best features** for our first dataset, i.e 
+we have dropped 17 featues from the original dataset.
 
 For second analysis, we have used **PCA** to reduce the dimensionality of the features. We have reduced features in 
 such a way, atleast **90% of the variance** is retained. Finally, Finally, we did model based analysis using **Backward Elimanitation**
-to produce our second dataset.
+to produce our second dataset.By the end of this analysis, we have found the **30 independent best features** for our second dataset, i.e
+we have dropped 14 featues from the original dataset.
 
 ## Experiments with models
 
@@ -106,11 +110,11 @@ The Table below shows the report on various models we have tested on the dataset
 | Model Name                   | Accuracy | Precision | Recall | F1-Score | AUC |TP  | FP | TN | FN |
 |:----------------------------:|:--------:|:---------:|:------:|:--------:|:---:|:--:|:--:|:--:|:--:|
 | Logistic Regression          | 0.81     | 0.8       | 0.81   | 0.80     | 0.71| 93 | 17 | 17 | 09 |
-| Ensemble of Decision Trees   | 0.00     | 0.00      | 0.00   | 0.00     | 0.00| 00 | 00 | 00 | 00 |
+| Ensemble of Decision Trees   | 0.83     | 0.83      | 0.83   | 0.83     | 0.76| 92 | 13 | 21 | 10 |
 | Random Forest Classifier     | 0.89     | 0.89      | 0.89   | 0.89     | 0.85| 95 | 08 | 26 | 07 |
 | Support Vector Machine       | 0.84     | 0.85      | 0.84   | 0.84     | 0.81| 88 | 08 | 26 | 14 |
-| Naive Bayes Classifier       | 0.00     | 0.00      | 0.00   | 0.00     | 0.00| 00 | 00 | 00 | 00 |
-| XGBoost Classifier           | 0.91     | 0.91      | 0.91   | 0.91     | 0.85| 99 | 03 | 25 | 03 |
+| Naive Bayes Classifier       | 0.79     | 0.79      | 0.79   | 0.79     | 0.72| 89 | 15 | 19 | 13 |
+| XGBoost Classifier           | **0.91**     | **0.91**      | **0.91**   | **0.91**     | 0.85| 99 | 03 | 25 | 03 |
 
 
 The Table below shows the report on various models we have tested on the dataset-2.
@@ -118,24 +122,38 @@ The Table below shows the report on various models we have tested on the dataset
 | Model Name                   | Accuracy | Precision | Recall | F1-Score | AUC |TP  | FP | TN | FN |
 |:----------------------------:|:--------:|:---------:|:------:|:--------:|:---:|:--:|:--:|:--:|:--:|
 | Logistic Regression          | 0.76     | 0.79      | 0.76   | 0.77     | 0.73| 80 | 11 | 23 | 22 |
-| Ensemble of Decision Trees   | 0.00     | 0.00      | 0.00   | 0.00     | 0.00| 00 | 00 | 00 | 00 |
+| Ensemble of Decision Trees   | 0.66     | 0.68      | 0.66   | 0.67     | 0.58| 76 | 20 | 14 | 26 |
 | Random Forest Classifier     | 0.78     | 0.77      | 0.78   | 0.77     | 0.68| 90 | 18 | 16 | 12 |
-| Support Vector Machine       | 0.90     | 0.89      | 0.90   | 0.89     | 0.84| 97 | 09 | 25 | 05 |
-| Naive Bayes Classifier       | 0.00     | 0.00      | 0.00   | 0.00     | 0.00| 00 | 00 | 00 | 00 |
+| Support Vector Machine       | **0.90**     | **0.89**      | **0.90**   | **0.89**     | **0.84**| 97 | 09 | 25 | 05 |
+| Naive Bayes Classifier       | 0.81     | 0.80      | 0.81   | 0.80     | 0.71| 93 | 17 | 17 | 09 |
 | XGBoost Classifier           | 0.88     | 0.88      | 0.88   | 0.88     | 0.82| 96 | 10 | 24 | 06 |
 
 
-From the above table, we can see that , for the dataset-1, Logistic Regression is the best model to predict the PD.
-This is because , being medical dataset, model having lower FN is consider better.
+From the above table, we can see that , for the dataset-1, **XGBoost Classifier** is the best model to predict the PD.
+This is because , being medical dataset, model having lower FN is considered better.
 
-For the dataset-2, Random Forest Classifier is the best model to predict the PD.
+For the dataset-2, **Support Vector Machine** is the best model to predict the PD.
 
 
 ---
 
 # Discussion
 
+In this study, we have presented a detailed ML analysis of signal processing used in PD classification
+from voice recordings. The most commonly used set of features in this domain, which is referred to as
+“baseline features” throughout this study, has also been included as a separate group. We have collected the
+voice recordings of 252 subjects (188 PD patients and 64 healthy controls) in the context of this study,
+extracted various feature subsets from the voice recordings and evaluated the effectiveness using a number of classifiers.
 
+Another important contribution of this study is the comparison of the signal processing methods with
+different types of classifiers. We have two different pre-processing techniques for more robust analysis. While using statistatic analysis,
+for pre-processing , we got maximum **F1-Score of 91% with XGBoost Classifier**. While using PCA, we got maximum **F1-Score 
+of 90% with SVM Classifier**.
+
+As a future
+direction, the TQWT technique, which has showed promising results in PD classification problem, can be used
+to predict the Unified Parkinson’s Disease Rating Scale (UPDRS) score of PD patients to build a robust PD
+telemonitoring system.
 
 ---
 
