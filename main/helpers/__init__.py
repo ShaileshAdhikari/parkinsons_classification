@@ -10,3 +10,5 @@ from .evaluation_metrics import (
 )
 
 from .xgboost_model import TrainXGBoost as XGBoostModel
+
+from .random_forest_model import RandomForestClassifierBagging as RandomForestModel
